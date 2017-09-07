@@ -12,10 +12,23 @@
  
   {% include navigation.html %} 
 
+<style>
+div#archive-link {
+    font-size: 18px;
+    margin: 10px 0px 10px 20px; 
+}
+section {
+    margin-top: 30px;
+}
+</style>
+
   <body>
     <div class="wrapper">
+      <div id="archive-link">
+        <a href="{{ site.baseurl}}/blog/archive">> Go to Blog Archive</a>
+      </div>
+      <hr>
       <section>
-          <a href="{{ site.baseurl}}/blog/archive">\>Go to Blog archive.</a> 
         {{ content }}
       </section>
     </div> 

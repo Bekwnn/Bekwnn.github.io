@@ -1,5 +1,19 @@
 ---
-layout: default
+layout: post
+title: Blog Main Page
+permalink: /blog/
 ---
 
-<!-- TODO: display most recent blog post using liquid -->
+<!-- display excerpts of 3 most recent blog posts -->
+<div>
+  {% for post in site.posts %}
+    {% if forloop.index0 == 3 %}
+      {% break %}
+    {% else %}
+      <h1>{{ post.title }}</h1>
+      {{ post.excerpt }}
+      <a href="{{ site.url}}{{ post.url }}">>> Read More</a>
+      <hr>
+    {% endif %}
+  {% endfor %}
+</div>

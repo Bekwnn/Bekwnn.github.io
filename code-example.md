@@ -3,7 +3,7 @@ layout: default
 ---
 
 Here you go, Nick:
-```C++
+```c++
 #include <string>
 #include <iostream>
  

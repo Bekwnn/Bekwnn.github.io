@@ -1,0 +1,10 @@
+# Belongs at: /_data/navigation.yml
+
+- title: Home
+  url: /
+
+- title: Blog
+  url: /blog.html
+
+- title: About
+  url: /about.html

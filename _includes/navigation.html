@@ -1,0 +1,76 @@
+<!-- Belongs at: /_includes/navigation.html -->
+
+<!-- This finds the current page so it can be highlighted. -->
+
+{% for entry in site.data.navigation %}
+{% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
+    {% if fullurl == page.url %}
+        {% assign current_page = fullurl %}
+        {% break %}
+    {% elsif page.url contains fullurl %}
+        {% assign current_page = fullurl %}
+    {% endif %}
+{% endfor %}
+
+<style>
+nav {
+    margin: 0px auto 0px auto;
+    max-width: 650px;
+}
+nav ul {
+    margin: 20px 40px 20px 40px;
+}
+nav ul li {
+    display: inline;
+    margin: 0px 10px 0px 10px;
+    text-align: center;
+}
+nav hr {
+    margin: 0px;
+}
+div#title {
+    margin: 20px auto 0px auto;
+    max-width: 650px;
+}
+div#title h1 {
+    font-size: 48px;
+    text-align: center;
+}
+nav div#title p {
+    font-size: 16px;
+}
+</style>
+
+<nav>
+  <div id="title">
+    <h1>{{ site.title | default: site.github.repository_name }}</h1>
+    <p>{{ site.description | default: site.github.project_tagline }}</p>
+    <hr>
+  </div>
+
+  <!-- Then we build the nav bar. -->
+  <ul>
+  {% for entry in site.data.navigation %}
+      {% if entry.url == current_page %}
+          {% assign current = ' class="current"' %}
+      {% else %}
+          <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
+          {% assign current = null %}
+      {% endif %}
+      {% assign sublinks = entry.sublinks %}
+      {% if sublinks %}
+      <li{{ current }}>
+          <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+          <ul>
+              {% for sublink in sublinks %}
+              <li><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
+              {% endfor %}
+          </ul>
+      </li>
+      {% else %}
+      <li{{ current }}><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></li>
+      {% endif %}
+  {% endfor %}
+  </ul>
+  <hr>
+</nav>

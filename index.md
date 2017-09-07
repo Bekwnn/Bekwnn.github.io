@@ -4,6 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
+## NOTICE: This site is currently under development, but feel free to poke around.
+
 # This is h1
 ## This is h2
 ### This is h3

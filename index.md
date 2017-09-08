@@ -1,30 +1,19 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults 
 layout: default
 title: Home
 ---
-## NOTICE: This site is currently under development, but feel free to poke around.
+# What Is This Website About?
 
-# This is h1
-## This is h2
-### This is h3
-#### This is h4
+This is the home page of me. Bekwnn. I'm a programmer. I mainly do things involving computer graphics and game development.
+For a bit more about me, check out the [about]({{ site.baseurl }}/about) page. Otherwise, this page houses a collection of
+topics I've written about and other stuff I've done. Feel free to poke around the site to see if anything interests you.
 
-This is a list:
+# What's On This Site?
 
-* an item
-* another item
-* yet another item
+1. Anything relating to game development
+2. Anything related to computer graphics
+3. Anything related to programming
 
-This is a numbered list:
+But mainly the first two.
 
-1. Item number 1
-2. Item number 2
-3. Item number 3
-
-These are *italics,* this is **bold,** and this is ***bold italics.***
-
-> Quoted text.
->> Nested quote.
+As a starting point, I'd recommend hitting up my [blog.]({{ site.baseurl }}/blog)

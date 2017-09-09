@@ -14,23 +14,22 @@
 
 <style>
 nav {
-    margin: 0px auto 0px auto;
-    max-width: 650px;
+    margin: 0px auto;
 }
-nav ul {
-    margin: 20px 40px 20px 40px;
+div.nav ul {
+    margin: 20px 0px;
+    padding: 0px;
 }
-nav ul li {
+div.nav ul li {
     display: inline;
     margin: 0px 10px 0px 10px;
     text-align: center;
 }
-nav hr {
+div.nav hr {
     margin: 0px;
 }
 div#title {
-    margin: 20px auto 0px auto;
-    max-width: 650px;
+    margin: 20px auto;
 }
 div#title h1 {
     font-size: 48px;
@@ -41,14 +40,17 @@ nav div#title p {
 }
 </style>
 
-<nav>
+<div class="nav">
+<div class="wrapper">
   <div id="title">
     <h1>{{ site.title | default: site.github.repository_name }}</h1>
     <p>{{ site.description | default: site.github.project_tagline }}</p>
     <hr>
   </div>
+</div>
 
   <!-- Then we build the nav bar. -->
+<div class="wrapper">
   <ul>
   {% for entry in site.data.navigation %}
       {% if entry.url == current_page %}
@@ -73,4 +75,5 @@ nav div#title p {
   {% endfor %}
   </ul>
   <hr>
-</nav>
+</div>
+</div>

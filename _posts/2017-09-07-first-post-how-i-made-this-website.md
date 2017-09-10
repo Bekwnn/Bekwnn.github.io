@@ -2,7 +2,7 @@
 layout: post
 title: How I Made This Website
 date: 2017-09-07 17:00:00 -0700
-tags: [website, non-gamedev, api]
+tags: [website, webdev, api]
 ---
 I thought it would be appropriate to make my first post on how I made this website, for anyone who's curious.
 The website was built using [Jekyll](https://jekyllrb.com/), which makes use of [liquid](https://shopify.github.io/liquid/).

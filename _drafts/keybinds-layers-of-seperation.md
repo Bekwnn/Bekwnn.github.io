@@ -117,9 +117,9 @@ void Tick()
 }
 ```
 
-We've decentralized the bindings from a single list in the component to a list owned by
+We've decentralized the bindings from a single list in the Input class to a list owned by
 the controller and the pawn it possesses. This 3rd degree of separation allows us to bind
-actions specific to the controller (pause menu, etc) and action specific to an actor. But
+actions specific to the controller (pause menu, etc) and actions specific to an actor. But
 mainly, it allows us to take our controller and have it freely possess different actors
 with a `Pawn` component in a very clean way.
 
@@ -136,8 +136,29 @@ their pawn.
 It's a really strong pattern, but I see most people stop at 1 or 2 degrees of separation
 and instead build states with the state pattern that are maybe a lot more complicated than
 they need to be, and they could simplify them if they had access to an abstraction like this
-one. Alternatively they might use some mechanism involving swapping components per the
+one. Alternatively they might use some mechanism involving swapping behavior components per the
 [strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern).
 
-That's all I have to say on this subject for now. Hopefully there are some ideas somewhere in
-here you can take and implement in your own games.
+## An Important Note:
+
+The examples shown here don't cover some of the challenges introduced by this abstraction.
+Notably, what happens when multiple actions are queued up during one frame? The flow of the
+program becomes more unpredictable. This example also doesn't cover the addition of CTRL,
+SHIFT, and ALT as modifier keys, though adding some sort of bitmask enum to the binding for
+those shouldn't be difficult.
+
+One method to counteract this might be to associate a priority value with each binding and
+sort the list by that priority value, allowing you to define which action bindings have a
+higher or lower priority when a conflict between them arises. Then if both inputs are pressed
+during the same frame, the higher priority action will execute first, and if need be, raise
+a flag to disable the lower priority action when it attempts to execute afterwards.
+
+Overall there are a lot of intricacies to input handling and it's a very finnicky business that
+I don't plan to cover here. Our assumption in this case is that handling that stuff is the Input
+class's job and making that class behave correctly is a different topic. If you're working with
+a game engine or some kind of framework, this stuff is likely already done for you.
+
+That's all I have to say on this subject for now. I do think that, generally speaking, implementing
+something like this will save you time in the long run as you keep developing and wind up making
+use of the features the different layers of abstraction provide. At the very least, hopefully there
+are some ideas in here you can take and implement in your own games.

@@ -86,7 +86,7 @@ but the state pattern can be used in conjunction with this action binding system
 you can use one or the other where appropriate.
 
 With that said, let's stop briefly and look at our motivation: to be honest most games can
-make do with 1 degree of separation and maybe the use of a state pattern. So Why all this work?
+make do with 1 degree of separation and maybe the use of a state pattern. So why all this work?
 Well, this is code that you can use from game to game to game, so long as you're working in the
 same language/engine. Even if you aren't, translating already written code is easy. The merit of
 doing this extra work will show itself if you either work on a long project or work on multiple

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Artful Shape of Functions
+date: 2017-09-14 16:20:00 -0700
 tags: [gamedev, math, graphics]
 ---
 Maybe I'm biased from my work with computer graphics, but I believe calculus and a strong
@@ -11,7 +12,7 @@ the value of having *someone* with this knowledge working on a game adds a lot o
 
 Suddenly motions and collisions are better, smoother. Better yet, they no longer follow
 the stock engine rules, instantly making your game feel less "cheap". Objects fly around
-in fancy motions with easing and accereration. Being comfortable with math empowers you
+in fancy motions with easing and acceleration. Being comfortable with math empowers you
 to more confidently alter things like jump behaviors, physics, or anything involving movement
 in a 2D or 3D space.
  
@@ -20,7 +21,7 @@ visually in our mind, we can then *derive* the math needed to achieve that effec
 
 That at least *sounds* like a powerful ability, doesn't it? If I had to equate it to something,
 I'd equate it to an artist's ability to translate a mental image into a good brush stroke.
-Of course in a 3D world we don't work with brush strokes. We work with functions.
+Of course in a 3D world we don't work with brush strokes. We work with math.
 
 The rest of this post is going to give some examples of this skill in the hopes of
 demonstrating its usefulness and inspiring ideas of your own.
@@ -68,16 +69,23 @@ part of a function to animate the landscape or enemies.
 
 ## Example #2: Bezier Curve
 
-TODO picture of spirit flame attack from Ori
+![Ori Spirit Flame]({{site.url}}/assets/OriCurve.png)
 
 3D curves can be used to steer cameras or create interesting projectiles. Most projectiles with an arcing
 path use some kind of physics, but what if you want the effect of an attack which travels in an arcing path
-to an exact destination? Or a beam particle which bends while travelling between two targets? Overwatch makes
-use of this very effect with two of its weapons which have a 'tether' effect:
+to an exact destination? Or a beam particle which bends while travelling between two targets? In **Ori and the
+Blind Forest**, your basic attack is a simple homing missle. In terms of gameplay, it's a slightly boring way
+to attack enemies, so the devs decided to make it visually interesting by having it fire as randomly curving
+projectiles. Even if the attack is a bit boring from a mechanical standpoint, it's interesting visually. By
+doing this, the devs made a simple way to attack enemies that doesn't distract you from the core focus of the
+game: platforming.
 
-TODO picture of symmetra and mercy LMB curving
+Another example is **Overwatch**. Overwatch makes use of this very effect with two of its weapons which have a
+'tether' effect:
 
-These thethers don't just look good, but also serve a gameplay purpose: when the target you're attacking or
+![Overwatch Beams]({{site.url}}/assets/OverwatchCurve.png)
+
+These tethers don't just look good, but also serve a gameplay purpose: when the target you're attacking or
 healing is almost out of range, the tether becomes tense and straight. When they're closer, it's more bendy
 and loose. The shape of the tether gives the player a rough understanding of how close they are to losing
 their target.
@@ -100,7 +108,7 @@ Defined as math:
 <img src="{{site.url}}/assets/Cubic_Bezier_eq.png">
 </p> 
 
-Where in this example:
+Where `t` is a parameter between 0 and 1 travelling along the curve from p0 to p3, and for this example:
 
 * p0: (1, 0)
 * p1: (0, 3)
@@ -110,7 +118,7 @@ Where in this example:
 These curves and similar types of curves are used absolutely everywhere in not just games but graphics applications
 in general. You'll find them in photoshop, mspaint, blender and maya, and even built into most major game engines
 (Unity: AnimationCurve class, UE4: curve editor). You can use them to create more interestingly shaped beams or
-projectiles, or to lay down paths such as a road or a set of rollercoaster tracks. 
+projectiles, or to lay down paths such as a road or a set of roller-coaster tracks. 
 
 ## Example #3: Gradient, Fluids, Gasses, Vector Fields 
 
@@ -122,7 +130,7 @@ The gradient is used in a bunch of things in games, one of the most notable bein
 </p>
 
 The simplest way to think of the gradient is that it's a vector or field of vectors which point in the direction that the
-function changes most rapidly. If your function for example was some heightmap `z = f(x,y)` type function which forms a
+function changes most rapidly. If your function for example was some height map `z = f(x,y)` type function which forms a
 surface that looks like a grassland of rolling hills, then the gradient of that function is an (x,y) vector which will always
 point 'directly uphill': the direction where Z is increasing the most.
 
@@ -135,11 +143,21 @@ rotated by 90 degrees in one direction' to achieve a similar vector field.
 The gradient, divergence, and curl all have a place in simulating liquids and gasses, but the notion of vector fields has a
 much broader application.
 
-[In **Left 4 Dead 2**](http://www.valvesoftware.com/publications/2010/siggraph2010_vlachos_waterflow.pdf), Valve used a texture
-to make the water in a large swamp area seem like it was flowing around objects and in certain directions. The flow of the
+<p align="center">
+<img src="{{site.url}}/assets/Flow_Map.png">
+</p>
+
+Above is a 2D vector field in the form of a red and green texture, where red would correspond to X and green to Y. The vector field
+it represents is something a bit like a whirlpool.
+
+[In **Left 4 Dead 2**](http://www.valvesoftware.com/publications/2010/siggraph2010_vlachos_waterflow.pdf), Valve used a similar texture
+to make the water in a large swamp area seem like it was flowing around objects and in certain directions. The red and green
+data of the texture represented a 2D vector field of forces, deciding how the texture of the water would move. The flow of the
 water actually served a gameplay purpose, as it flowed towards the area the players were meant to go. This subtle environment
 detail kept players oriented and prevented them from getting turned around and accidentally backtracking back to the beginning
 of the swamp.
+
+## In Closing
 
 Now, more complicated math can generally be harder and take longer to implement, and when it comes down to things like implementing
 volume-preserving mesh animations, which is probably not something that you're going to do outside of a large team, and as a very
@@ -152,8 +170,6 @@ visual splendor was a large contributing factor to its success, and the sand spe
 aforementioned visual splendor.
 
 ![Journey Sand]({{site.url}}/assets/JourneySand.jpg)
-
-## In Closing
 
 Games are unique compared to movies, art, or books because it is an interactive medium. To play to the medium's strengths, means to take
 full advantage of that interactivity. Some games may play to this strength by presenting the player with difficult options to choose

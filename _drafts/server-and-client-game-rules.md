@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Server and Client Game Rules
+categories: blog
 tags: [gamedev, networking, code-design]
 ---
 This article is mostly a page taken from UE4's book, but generalized for any sort of

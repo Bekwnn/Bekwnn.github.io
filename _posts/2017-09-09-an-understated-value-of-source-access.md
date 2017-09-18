@@ -2,6 +2,7 @@
 layout: post
 title: An Understated Value of Source Access
 date: 2017-09-09 17:15:00 -0700
+categories: blog
 tags: [ue4, gamedev, api]
 ---
 One of the biggest 'pros' of Unreal Engine 4 in my mind is source access to the engine.

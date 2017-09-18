@@ -2,13 +2,14 @@
 layout: post
 title: The Artful Shape of Functions
 date: 2017-09-14 16:20:00 -0700
+categories: blog
 tags: [gamedev, math, graphics]
 ---
 Maybe I'm biased from my work with computer graphics, but I believe calculus and a strong
 fundamental understanding of math which allows you to manipulate objects in a 3D space is
 one of the most valuable tools in any game maker's toolkit. Granted, code that involves
 highly math-sensitive operations tends to be a small part of any game's code base, but
-the value of having *someone* with this knowledge working on a game adds a lot of value.
+having *someone* with this knowledge working on a game adds a lot of value.
 
 Suddenly motions and collisions are better, smoother. Better yet, they no longer follow
 the stock engine rules, instantly making your game feel less "cheap". Objects fly around

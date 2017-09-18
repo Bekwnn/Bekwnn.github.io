@@ -2,6 +2,7 @@
 layout: post
 title: Keybinds - Layers of Separation
 date: 2017-09-11 13:25:00 -0700
+categories: blog
 tags: [gamedev, code-design]
 ---
 Doing keybinds properly is something I see a lot of developers skip over or put off

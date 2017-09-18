@@ -6,14 +6,17 @@ permalink: /blog/
 
 <!-- display excerpts of 3 most recent blog posts -->
 <div>
+  {% assign iter = 0 %}
   {% for post in site.posts %}
-    {% if forloop.index0 == 3 %}
+    {% if iter == 3 %}
       {% break %}
-    {% else %}
+    {% endif %}
+    {% if post.categories contains "blog" %}
       <h1>{{ post.title }}</h1>
       {{ post.excerpt }}
       <a href="{{ site.url}}{{ post.url }}">>> Read More</a>
       <hr>
+      {% assign iter = iter | plus: 1 %}
     {% endif %}
   {% endfor %}
 </div>

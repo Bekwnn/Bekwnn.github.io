@@ -5,7 +5,8 @@ categories: blog
 tags: [gamedev, networking, code-design]
 ---
 This article is mostly a page taken from UE4's book, but generalized for any sort of
-engine or framework. This is going to be about UE4's pattern of GameMode and GameState.
+engine or framework. This is going to be about UE4's pattern of GameMode and GameState,
+but generalized for you to implement in Unity, Godot, or any other engine.
 GameMode is a set of rule and game information held exclusively by the server, while
 GameState is the set of rule and game information that gets replicated to all connected
 clients. The main, clear advantage here is to prevent clients from cheating or having

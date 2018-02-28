@@ -10,6 +10,8 @@ graphics programmer. I mainly work with Unreal Engine 4, Unity, and OpenGL. I gr
 University of Victoria with a BSc in Computer Science with Computer Graphics option. I make
 games, tinker with experiments, and exercise my creativity through my programming.
 
+Currently working at Relic Entertainment on Age of Empires IV.
+
 You can find me on:
 * [Github: {{ site.github_username }}](https://github.com/Bekwnn)
 * [Twitter: @{{ site.twitter_username}}](https://twitter.com/BekwnnDev)
